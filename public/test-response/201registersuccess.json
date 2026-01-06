@@ -1,0 +1,11 @@
+{
+    "statusCode": 201,
+    "statusMessage": "Created",
+    "statusDescription": "Resource created successfully",
+    "result": {
+        "successMessage": "User register successfully",
+        "data": {
+            "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        }
+    }
+}

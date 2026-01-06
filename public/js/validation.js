@@ -39,10 +39,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // LOGIC LOGIN
     // ============================
     if (formLogin) {
-        formLogin.addEventListener("submit", (e) => {
+        formLogin.addEventListener("submit", async (e) => {
+            e.preventDefault(); // Stop jika error
             // Cek validasi Login
-            if (!checkLoginInputs()) {
-                e.preventDefault(); // Stop jika error
+            if (checkLoginInputs()) {
+                await loginUser(loginEmail.value, loginPassword.value);
             }
         });
     }

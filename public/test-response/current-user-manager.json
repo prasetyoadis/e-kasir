@@ -5,10 +5,10 @@
     "result": {
         "data": {
             "id": "f8b228a7-03e7-491d-ba48-c6ec625bb335",
-            "name": "Owner Kasir",
-            "username": "ownerkasir",
-            "email": "ownerkasir@gmail.com",
-            "msisdn": "+6281113334445",
+            "name": "Manager Kasir",
+            "username": "managerkasir",
+            "email": "managerkasir@gmail.com",
+            "msisdn": "+6289944331133",
             "is_active": true,
             "subscriptions": [
                 {
@@ -33,14 +33,11 @@
             "roles": [
                 {
                     
-                    "slug": "owner",
+                    "slug": "manager",
                     "permissions": [
                             "user.*",
-                            "role.*",
-                            "outlet.*",
-                            "product.*",
-                            "inventory.*",
-                            "transaction.*",
+                            "role.view",
+                            "outlet.view",
                             "report.*"
                     ]
                 }
