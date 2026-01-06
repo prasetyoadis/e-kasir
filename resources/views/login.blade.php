@@ -102,6 +102,7 @@
 
     <script src="js/main.js"></script>
     <script src="js/validation.js"></script>
+    <script src="js/auth/login.js"></script>
 </body>
 
 </html>
