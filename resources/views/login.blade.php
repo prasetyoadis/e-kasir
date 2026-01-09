@@ -94,7 +94,7 @@
         <div class="right-panel">
             <div class="panel-content">
                 <img src="asset/img/logo-kasia.png" alt="Dashboard" />
-                <h2>The easiest way to manage your transation</h2>
+                <h2>The easiest way to manage your transaction</h2>
                 <p>Simple cashier for your business</p>
             </div>
         </div>
