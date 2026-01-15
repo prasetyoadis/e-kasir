@@ -13,3 +13,9 @@ Route::get('/login', function () {
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
+Route::get('/dashboard/kasir', function () {
+    return view('dashboard.kasir.index');
+});
+Route::get('/dashboard/kasir-cafe', function () {
+    return view('dashboard.kasir-cafe.index');
+});
