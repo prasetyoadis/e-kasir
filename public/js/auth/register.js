@@ -1,32 +1,28 @@
 import { handleApiError } from '../errors/handleApiError.js';
 import { showToast } from '../toast.js';
 
-export async function registerUser(name, username, email, msisdn, password) {
+// Parameter terakhir 'onSuccessCallback' adalah fungsi reset yang dikirim dari validation.js
+export async function registerUser(name, email, msisdn, password, onSuccessCallback) {
     const container = document.getElementById("container");
 
     try {
-        const isSuccess = false;
+        // Ganti Logic ini sesuai kebutuhan (True/False)
+        const isSuccess = true;
         const url = isSuccess ? 'test-response/success/auth/register/201-register-success.json' : 'test-response/failed/auth/register/422-validation-failed.json';
-        
-        // simulasi login → fetch ke file JSON statis
+
         const response = await fetch(url);
 
-        // const response = await fetch('http://192.168.43.6:8080/api/auth/register', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify({
-        //          name,
-        //          username,
-        //          email,
-        //          msisdn,                    
-        //          password
-        //     })
-        // })
+        // --- FETCH REAL API (Contoh) ---
+        /*
+        const response = await fetch('http://192.168.43.6:8080/api/auth/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, msisdn, password })
+        })
+        */
 
         const resultResponse = await response.json();
-        console.log('Loaded data:', resultResponse);
+        console.log('Register Response:', resultResponse);
 
         switch (resultResponse.statusCode) {
             case 400:
@@ -37,7 +33,7 @@ export async function registerUser(name, username, email, msisdn, password) {
                 break;
             case 422:
                 handleApiError(resultResponse.result.errorCode);
-                showRegisterError(document.getElementById("regEmail"), resultResponse.result.errors.email[0]);
+//                 showRegisterError(document.getElementById("regEmail"), resultResponse.result.errors.email[0]);
                 break;
             case 500:
                 handleApiError(resultResponse.result.errorCode);
@@ -56,7 +52,7 @@ export async function registerUser(name, username, email, msisdn, password) {
                 break;
         }
     } catch (err) {
-        console.error(err);
+        console.error("Register Error:", err);
     }
 }
 
